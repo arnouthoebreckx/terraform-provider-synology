@@ -11,7 +11,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-func fileItem() *schema.Resource {
+func resourceFileItem() *schema.Resource {
 	return &schema.Resource{
 		CreateContext: resourceFileCreateItem,
 		ReadContext:   resourceFileReadItem,

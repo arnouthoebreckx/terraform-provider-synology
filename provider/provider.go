@@ -29,15 +29,15 @@ func Provider() *schema.Provider {
 			},
 		},
 		DataSourcesMap: map[string]*schema.Resource{
-			"synology_vmm_guest":         dataSourceGuestItem(),
-			"synology_vmm_guest_storage": datasourceStorageItem(),
-			"synology_vmm_guest_network": datasourceNetworkItem(),
-			"synology_vmm_guest_host":    datasourceHostItem(),
+			"synology_vmm_guest":    dataSourceVmmGuest(),
+			"synology_vmm_storages": datasourceVmmStorages(),
+			"synology_vmm_networks": datasourceVmmNetworks(),
+			"synology_vmm_hosts":    datasourceVmmHosts(),
 		},
 		ResourcesMap: map[string]*schema.Resource{
-			"synology_file":      fileItem(),
-			"synology_folder":    folderItem(),
-			"synology_vmm_guest": guestItem(),
+			"synology_file":      resourceFileItem(),
+			"synology_folder":    resourceFolderItem(),
+			"synology_vmm_guest": resourceVmmGuest(),
 		},
 		ConfigureContextFunc: providerConfigure,
 	}

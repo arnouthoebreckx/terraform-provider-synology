@@ -10,9 +10,9 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-func datasourceHostItem() *schema.Resource {
+func datasourceVmmHosts() *schema.Resource {
 	return &schema.Resource{
-		ReadContext: dataSourceHostItemRead,
+		ReadContext: datasourceVmmHostsRead,
 		Schema: map[string]*schema.Schema{
 			"hosts": {
 				Type:     schema.TypeList,
@@ -54,7 +54,7 @@ func datasourceHostItem() *schema.Resource {
 	}
 }
 
-func dataSourceHostItemRead(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
+func datasourceVmmHostsRead(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
 	var diags diag.Diagnostics
 
 	client := m.(client.SynologyClient)

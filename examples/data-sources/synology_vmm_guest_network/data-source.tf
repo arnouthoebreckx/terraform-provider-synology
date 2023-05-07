@@ -14,5 +14,5 @@ provider "synology" {
   # these variables can be set as env vars in SYNOLOGY_ADDRESS SYNOLOGY_USERNAME and SYNOLOGY_PASSWORD
 }
 
-data "synology_vmm_guest_network" "my-guest" {
+data "synology_vmm_networks" "my-guest" {
 }

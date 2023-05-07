@@ -10,9 +10,9 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-func datasourceStorageItem() *schema.Resource {
+func datasourceVmmStorages() *schema.Resource {
 	return &schema.Resource{
-		ReadContext: dataSourceStorageItemRead,
+		ReadContext: datasourceVmmStoragesRead,
 		Schema: map[string]*schema.Schema{
 			"storages": {
 				Type:     schema.TypeList,
@@ -58,7 +58,7 @@ func datasourceStorageItem() *schema.Resource {
 	}
 }
 
-func dataSourceStorageItemRead(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
+func datasourceVmmStoragesRead(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
 	var diags diag.Diagnostics
 
 	client := m.(client.SynologyClient)

@@ -10,9 +10,9 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-func datasourceNetworkItem() *schema.Resource {
+func datasourceVmmNetworks() *schema.Resource {
 	return &schema.Resource{
-		ReadContext: dataSourceNetworkItemRead,
+		ReadContext: datasourceVmmNetworksRead,
 		Schema: map[string]*schema.Schema{
 			"networks": {
 				Type:     schema.TypeList,
@@ -34,7 +34,7 @@ func datasourceNetworkItem() *schema.Resource {
 	}
 }
 
-func dataSourceNetworkItemRead(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
+func datasourceVmmNetworksRead(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
 	var diags diag.Diagnostics
 
 	client := m.(client.SynologyClient)

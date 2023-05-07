@@ -12,7 +12,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-func guestItem() *schema.Resource {
+func resourceVmmGuest() *schema.Resource {
 	return &schema.Resource{
 		CreateContext: resourceGuestCreateItem,
 		ReadContext:   resourceGuestReadItem,

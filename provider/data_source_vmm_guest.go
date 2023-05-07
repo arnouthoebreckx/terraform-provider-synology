@@ -8,9 +8,9 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-func dataSourceGuestItem() *schema.Resource {
+func dataSourceVmmGuest() *schema.Resource {
 	return &schema.Resource{
-		ReadContext: dataSourceGuestItemRead,
+		ReadContext: dataSourceVmmGuestRead,
 		Schema: map[string]*schema.Schema{
 			"auto_run": {
 				Type:        schema.TypeInt,
@@ -122,7 +122,7 @@ func dataSourceGuestItem() *schema.Resource {
 	}
 }
 
-func dataSourceGuestItemRead(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
+func dataSourceVmmGuestRead(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
 	var diags diag.Diagnostics
 
 	client := m.(client.SynologyClient)
